@@ -1,0 +1,10 @@
+<br><%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= "Edit" %>
+<% if @current_user != nil && @current_user.admin == true %>
+	<h1>Editing position</h1>
+
+	<%= render 'form' %>
+
+	<%= link_to 'Show', @position %>
+<% else %>
+	Permission denied.
+<% end %>

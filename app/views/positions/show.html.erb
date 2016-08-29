@@ -1,0 +1,28 @@
+<h1><%= @position.name %></h1>
+<% if @position.active %>
+	<%= link_to 'Portfolio', portfolio_path %>><%= @position.ticker %>
+<% else %>
+	<%= link_to 'Historical Positions', inactive_path %>><%= @position.ticker %>
+<% end %>
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Ticker:</strong>
+  <%= @position.ticker %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @position.name %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @position.description %>
+</p>
+
+
+<%= link_to 'View rationale', rationale_path(:id => params[:id]) %>
+<% if @current_user != nil && @current_user.admin == true %>
+  <%= link_to 'Edit', edit_position_path(@position) %>
+<% end %>
+

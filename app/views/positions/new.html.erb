@@ -1,0 +1,10 @@
+<br><%= link_to 'Portfolio', portfolio_path %>><%= "New" %>
+<% if @current_user != nil && @current_user.admin == true %>
+	<h1>New position</h1>
+
+	<%= render 'form' %>
+
+	<%= link_to 'Back', positions_path %>
+<% else %>
+	Permission denied.
+<% end %>

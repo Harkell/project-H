@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Harkell</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to "Home", root_path %>
+<%= link_to "About", about_path %>
+<%= link_to "Portfolio", portfolio_path %>
+<%= link_to "Contact", "http://www.harkell.com/" %>
+<% if @current_user != nil %>
+	| <%= @current_user.username %>
+	<%= link_to 'Logout', logout_path %>
+<% end %>
+
+<%= yield %>
+
+</body>
+<footer>
+	<%= link_to 'Harkell', login_path %>
+</footer>
+</html>

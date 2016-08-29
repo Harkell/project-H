@@ -1,0 +1,22 @@
+<h1>Historical Positions</h1>
+<%= 'Historical Positions' %>
+<table>
+
+
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <td><%= position.ticker %></td>
+        <td><%= link_to "#{position.name}", position %></td>
+        <% if @current_user != nil && @current_user.admin == true %>
+          <td><%= link_to 'Edit', edit_position_path(position) %></td>
+          <%#= link_to 'Add rationale', new_rationale_path(:id => position.id) %>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Current Portfolio', portfolio_path %>

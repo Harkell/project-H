@@ -1,0 +1,15 @@
+<br><%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= link_to "Rationale", rationale_path(params[:id]) %>><%= "New" %>
+<% if @current_user != nil && @current_user.admin == true %>
+	<h1>New rationale</h1>
+
+	<% if @completed != true %>
+		<%= render 'form' %>
+	<% else %>
+		<%= "Rationales already made." %>
+		<%= "(#{@findrationale})" %>
+	<% end %>
+<% else %>
+	Permission denied.
+<% end %>
+
+

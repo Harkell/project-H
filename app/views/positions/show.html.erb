@@ -16,7 +16,7 @@
 
 <p>
   <strong><%= "About #{@position.ticker}" %>:</strong><br>
-  <%= @position.description %>
+  <%= safe_join(@position.description.split("\r\n"), "<br />".html_safe) %>
 </p>
 
 

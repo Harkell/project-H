@@ -4,20 +4,22 @@
 
 <table>
 
-
+<% if @current_user != nil %> <%# Delete this to show portfolio for all  %>
   <tbody>
     <% @positions.each do |position| %>
       <tr>
         <td><%= position.ticker %></td>
-        <td align='left'><%= link_to "#{position.name}", position %></td>
+        <td><%= link_to "#{position.name}", position %></td>
         <% if @current_user != nil && @current_user.admin == true %>
           <td><%= link_to 'Edit', edit_position_path(position) %></td>
-          <%#= link_to 'Add rationale', new_rationale_path(:id => position.id) %>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+<% else %> <%# and this else block %>
+  <br>Portfolio currently private.
+<% end %> 
 
 <br>
 <%= link_to 'Historical Positions', inactive_path %>
@@ -31,7 +33,7 @@
 <br>
 <br>
 <u><b>Portfolio returns</b></u>
-<table width='300px'>
+<table width='300px', border='1'>
   <tr>
     <th>Year</th>
     <th>Return</th> 

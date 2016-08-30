@@ -1,4 +1,7 @@
-<br><%= link_to 'Portfolio', portfolio_path %>><%= "New" %>
+<font size='1'>
+	<%= link_to 'Portfolio', portfolio_path %>><%= "New" %>
+</font>
+<center>
 <% if @current_user != nil && @current_user.admin == true %>
 	<h1>New position</h1>
 
@@ -8,3 +11,4 @@
 <% else %>
 	Permission denied.
 <% end %>
+</center>

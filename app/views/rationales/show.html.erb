@@ -1,9 +1,12 @@
-<h1><%= @position.ticker + ' Investment Rationale' %></h1>
+<font size='1'>
 <% if @position.active %>
 	<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= "Investment Rationale" %>
 <% else %>
 	<%= link_to 'Historical Positions', inactive_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= "Investment Rationale" %>
 <% end %>
+</font>
+<center>
+<h1><%= @position.ticker + ' Investment Rationale' %></h1>
 <p id="notice"><%= notice %></p>
 <% if @norationale == false %>
 	<p>
@@ -12,22 +15,22 @@
 	</p>
 
 	<p>
-  	  <strong>Reasons for invesment:</strong>
-  	  <%= @rationale.reasons %>
+  	  <strong>Reasons for invesment:</strong><br>
+  	  <%= safe_join(@rationale.reasons.split("\r\n"), "<br />".html_safe) %>
 	</p>
 
 	<p>
-  	  <strong>Merits:</strong>
-  	  <%= @rationale.merits %>
+  	  <strong>Merits:</strong><br>
+  	  <%= safe_join(@rationale.merits.split("\r\n"), "<br />".html_safe) %>
 	</p>
 
 	<p>
-  	  <strong>Concerns:</strong>
-  	  <%= @rationale.concerns %>
+  	  <strong>Concerns:</strong><br>
+  	  <%= safe_join(@rationale.concerns.split("\r\n"), "<br />".html_safe) %>
 	</p>
 
 	<% if @current_user != nil && @current_user.admin == true %>
-		<%= link_to 'Edit', edit_rationale_path(@rationale) %> |
+		<%= link_to 'Edit', edit_rationale_path(@rationale) %>
 	<% end %>
 
 	<% else %>
@@ -37,3 +40,4 @@
 		<% end %>
 
 <% end %>
+</center>

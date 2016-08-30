@@ -1,5 +1,7 @@
-<h1>Current Portfolio</h1>
-<%= 'Portfolio' %>
+<font size='1'><%= 'Portfolio' %></font>
+<center>
+<u><b>Current Portfolio</h1></u></b>
+
 <table>
 
 
@@ -7,7 +9,7 @@
     <% @positions.each do |position| %>
       <tr>
         <td><%= position.ticker %></td>
-        <td><%= link_to "#{position.name}", position %></td>
+        <td align='left'><%= link_to "#{position.name}", position %></td>
         <% if @current_user != nil && @current_user.admin == true %>
           <td><%= link_to 'Edit', edit_position_path(position) %></td>
           <%#= link_to 'Add rationale', new_rationale_path(:id => position.id) %>
@@ -18,8 +20,18 @@
 </table>
 
 <br>
-Portfolio returns
-<table>
+<%= link_to 'Historical Positions', inactive_path %>
+<% if @current_user != nil && @current_user.admin == true %>
+  <%= link_to 'New Position', new_position_path %>
+<% end %>
+
+
+
+<br>
+<br>
+<br>
+<u><b>Portfolio returns</b></u>
+<table width='300px'>
   <tr>
     <th>Year</th>
     <th>Return</th> 
@@ -47,7 +59,5 @@ Portfolio returns
   </tr>
 </table>
 
-<%= link_to 'Historical Positions', inactive_path %>
-<% if @current_user != nil && @current_user.admin == true %>
-  <%= link_to 'New Position', new_position_path %>
-<% end %>
+
+</center>

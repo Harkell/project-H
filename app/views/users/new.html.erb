@@ -1,5 +1,4 @@
-<% @page_title = "UserAuth | Signup" %>
-<div class="Sign_Form">
+<center>
 <% if @current_user == nil %>
   <h1>Sign Up</h1>
   <p id="notice"><%= notice %></p>
@@ -8,7 +7,7 @@
     <p> Password:</br> <%= f.password_field :password %></p>
     <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
     <%= f.hidden_field :admin, value: false %>
-    <%= f.submit :Signup %>
+    <%= f.submit "Sign Up" %>
   <% end %>
   <% if @user.errors.any? %>
     <ul class="Signup_Errors">
@@ -20,4 +19,4 @@
 <% else %>
  You are already logged in.
 <% end %>
-</div>
+</center>

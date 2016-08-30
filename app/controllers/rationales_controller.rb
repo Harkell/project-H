@@ -80,10 +80,18 @@ class RationalesController < ApplicationController
     end
 
     def ticker_association
-      @position_ticker = Position.find(params[:id]).ticker
+      @position_ticker = if params[:id]
+        Position.find(params[:id]).ticker
+      else
+        nil
+      end
     end
 
-    def set_position
-      @position = Position.find(params[:id])
+    def set_position  
+      @position = if params[:id]
+        Position.find(params[:id])
+      else
+        nil
+      end
     end
 end

@@ -1,6 +1,5 @@
+<center>
 <% if session[:user_id] == nil %>
-<% @page_title = "UserAuth | Login" -%>
-<div class= "Sign_Form">
   <h1>Log in</h1>
   <p id="notice"><%= notice %></p>
   <%= form_tag(:action => 'login_attempt') do %>
@@ -12,4 +11,4 @@
 	<%= "You are already logged in." %>
 
 <% end %>
-</div>
+</center>

@@ -1,4 +1,9 @@
-<br><%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= link_to "Rationale", rationale_path(params[:id]) %>><%= "New" %>
+<font size='1'>
+	<% if @position != nil %>
+		<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= link_to "Rationale", rationale_path(params[:id]) %>><%= "New" %>
+	<% end %>
+</font>
+<center>
 <% if @current_user != nil && @current_user.admin == true %>
 	<h1>New rationale</h1>
 
@@ -11,5 +16,4 @@
 <% else %>
 	Permission denied.
 <% end %>
-
-
+</center>

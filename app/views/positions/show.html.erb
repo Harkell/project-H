@@ -1,9 +1,13 @@
-<h1><%= @position.name %></h1>
+<font size='1'>
 <% if @position.active %>
 	<%= link_to 'Portfolio', portfolio_path %>><%= @position.ticker %>
 <% else %>
 	<%= link_to 'Historical Positions', inactive_path %>><%= @position.ticker %>
 <% end %>
+</font>
+
+<center>
+<h1><%= @position.name %></h1>
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Ticker:</strong>
@@ -21,8 +25,8 @@
 </p>
 
 
-<%= link_to 'View rationale', rationale_path(:id => params[:id]) %>
+<%= link_to 'View Investment Rationale', rationale_path(:id => params[:id]) %>
 <% if @current_user != nil && @current_user.admin == true %>
   <%= link_to 'Edit', edit_position_path(@position) %>
 <% end %>
-
+</center>

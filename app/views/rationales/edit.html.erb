@@ -1,4 +1,7 @@
-<br><%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= link_to "Rationale", rationale_path(params[:id]) %>><%= "Edit" %>
+<font size='1'>
+	<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= link_to "Rationale", rationale_path(params[:id]) %>><%= "Edit" %>
+</font>
+<center>
 <% if @current_user != nil && @current_user.admin == true %>
 	<h1>Editing rationale</h1>
 
@@ -6,5 +9,6 @@
 <% else %>
 	Permission denied.
 <% end %>
+</center>
 
 

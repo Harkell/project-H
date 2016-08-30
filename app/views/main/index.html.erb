@@ -1,7 +1,22 @@
-<H1>Harkell</H1>
-<p id="notice"><%= notice %></p>
-<p>The personal website of Jordan Harkell Short.</p>
+<center><b><p id="notice"><%= notice %></p></b>
+<p><b>The personal website of Jordan Harkell Short.</b></p>
+<br>
 
+<table>
+  <tr>
+    <th>CV</th>
+  </tr>
+  <tr>
+    <td><%= link_to 'CV September 2016', root_path %></td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th>Research</th>
+  </tr>
+  <tr>
+    <td><%= link_to 'The Future of Cryptocurrency', asset_path("TFOC-30-03-14.pdf") %></td>
+  </tr>
+</table>
 
-CV:		<%= link_to 'CV September 2016', root_path %>								
-Research: <%= link_to 'Research paper 1', asset_path("TFOC-30-03-14.pdf") %> <%= link_to 'Research paper 2', root_path %> <%= link_to 'Research paper 3', root_path %>

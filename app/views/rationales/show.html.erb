@@ -6,13 +6,11 @@
 <% end %>
 </font>
 <center>
-<h1><%= @position.ticker + ' Investment Rationale' %></h1>
+<div class='adjustedTitle'>
+<u><b><%= @position.ticker + ' Investment Rationale' %></b></u>
+</div>
 <p id="notice"><%= notice %></p>
 <% if @norationale == false %>
-	<p>
-  	  <strong>Position:</strong>
-  	  <%= @position.ticker %>
-	</p>
 
 	<p>
   	  <strong>Reasons for invesment:</strong><br>

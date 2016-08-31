@@ -5,23 +5,23 @@
 	<%= link_to 'Historical Positions', inactive_path %>><%= @position.ticker %>
 <% end %>
 </font>
-
 <center>
-<h1><%= @position.name %></h1>
+<div class='adjustedTitle'>
+	<u><b><%= @position.name %></b></u>
+</div>
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Ticker:</strong>
-  <%= @position.ticker %>
-</p>
+
 
 <p>
-  <strong><%= "About #{@position.ticker}" %>:</strong><br>
+  <b><%= "About #{@position.ticker}" %>:</b>
+  <br>
   <%= safe_join(@position.description.split("\r\n"), "<br />".html_safe) %>
 </p>
 
-
+<div class='button'>
 <%= link_to 'View Investment Rationale', rationale_path(:id => params[:id]) %>
 <% if @current_user != nil && @current_user.admin == true %>
   <%= link_to 'Edit', edit_position_path(@position) %>
 <% end %>
+</div>
 </center>

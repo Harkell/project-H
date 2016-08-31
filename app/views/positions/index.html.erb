@@ -1,9 +1,11 @@
 <font size='1'><%= 'Portfolio' %></font>
 <center>
-<u><b>Current Portfolio</h1></u></b>
-
+<div class='adjustedTitle'>
+<u><b>Current Portfolio</u></b>
+</div>
 <table>
 
+<div class='portfolioList'>
 <% if @current_user != nil %> <%# Delete this to show portfolio for all  %>
   <tbody>
     <% @positions.each do |position| %>
@@ -19,19 +21,18 @@
 </table>
 <% else %> <%# and this else block %>
   <br>Portfolio currently private.
-<% end %> 
+<% end %> <br>
+</div>
 
-<br>
+<div class='button'>
 <%= link_to 'Historical Positions', inactive_path %>
 <% if @current_user != nil && @current_user.admin == true %>
   <%= link_to 'New Position', new_position_path %>
 <% end %>
-
-
+</div>
 
 <br>
-<br>
-<br>
+<div class='returnsTable'>
 <u><b>Portfolio returns</b></u>
 <table width='300px', border='1'>
   <tr>
@@ -60,6 +61,7 @@
     <td>TBC%</td>
   </tr>
 </table>
+</div>
 
 
 </center>

@@ -55,6 +55,10 @@ p {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+  /*border: solid;
+  /*background-color: #ffffcc;*/
+  width: 300px;
+  margin: auto;
 }
 
 .harkellFooter {

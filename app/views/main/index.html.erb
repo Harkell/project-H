@@ -7,7 +7,7 @@
     <th>CV</th>
   </tr>
   <tr>
-    <td><%= link_to 'CV January 2017', root_path %></td>
+    <td><%= link_to 'CV September 2016', asset_path("CV-01-09-16.pdf") %></td>
   </tr>
 </table>
 <br>
@@ -17,6 +17,20 @@
   </tr>
   <tr>
     <td><%= link_to 'The Future of Cryptocurrency', asset_path("TFOC-30-03-14.pdf") %></td>
+  </tr>
+</table>
+<br>
+<table>
+  <tr>
+    <th>Current Investments</th>
+  </tr>
+  <% @active_investments.each do |f| %>
+  <tr>
+    <td><%= link_to f.name, position_path(f.id) %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td><%= link_to 'More..', portfolio_path %>
   </tr>
 </table>
 

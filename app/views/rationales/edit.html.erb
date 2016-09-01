@@ -1,5 +1,5 @@
 <font size='1'>
-	<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= link_to "Rationale", rationale_path(params[:id]) %>><%= "Edit" %>
+	<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:position_id]) %>><%= link_to "Investment Rationale", position_rationale_path(params[:position_id]) %>><%= "Edit" %>
 </font>
 <center>
 <% if @current_user != nil && @current_user.admin == true %>

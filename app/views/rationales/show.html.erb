@@ -1,8 +1,8 @@
 <font size='1'>
 <% if @position.active %>
-	<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= "Investment Rationale" %>
+	<%= link_to 'Portfolio', portfolio_path %>><%= link_to @position.ticker, position_path(params[:position_id]) %>><%= "Investment Rationale" %>
 <% else %>
-	<%= link_to 'Historical Positions', inactive_path %>><%= link_to @position.ticker, position_path(params[:id]) %>><%= "Investment Rationale" %>
+	<%= link_to 'Historical Positions', inactive_path %>><%= link_to @position.ticker, position_path(params[:position_id]) %>><%= "Investment Rationale" %>
 <% end %>
 </font>
 <center>
@@ -28,13 +28,13 @@
 	</p>
 
 	<% if @current_user != nil && @current_user.admin == true %>
-		<%= link_to 'Edit', edit_rationale_path(@rationale) %>
+		<%= link_to 'Edit', edit_position_rationale_path %>
 	<% end %>
 
 	<% else %>
 		<%= "No rationale added." %>
 		<% if @current_user != nil && @current_user.admin == true %>
-			<%= link_to 'Add rationale', new_rationale_path(:id => params[:id]) %>
+			<%= link_to 'Add rationale', new_position_rationale_path(:id => params[:id]) %>
 		<% end %>
 
 <% end %>

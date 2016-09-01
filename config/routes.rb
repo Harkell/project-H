@@ -22,9 +22,19 @@ Rails.application.routes.draw do
   match '/inactive', to: 'positions#inactive', via: 'get'
 
   #get 'positions/inactive'
+#shallow do
+  resources :positions, only: [:new, :create, :edit, :update, :show] do
+    resource :rationale, :controller => :rationales, only: [:new, :edit, :create] do
+      get '', :on => :collection, :action => 'show'
+      patch '', :on => :collection, :action => 'update'
+      put '', :on => :collection, :action => 'update'
+    end
+  end
 
-  resources :positions, only: [:new, :create, :edit, :update, :show]
-  resources :rationales, only: [:show, :new, :create, :edit, :update]
+
+
+
+
   #resource :positions, only: [] do
     #resource :rationales, only: [:show, :new, :create, :edit, :update]
   #end

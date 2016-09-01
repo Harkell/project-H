@@ -21,7 +21,7 @@
 <div class='button'>
 <%= link_to 'View Investment Rationale', position_rationale_path(params[:id]) %>
 <% if @current_user != nil && @current_user.admin == true %>
-  <%= link_to 'Edit', edit_position_rationale_path(@position) %>
+  <%= link_to 'Edit', edit_position_path(@position) %>
 <% end %>
 </div>
 </center>

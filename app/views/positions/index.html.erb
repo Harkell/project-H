@@ -6,7 +6,7 @@
 <table>
 
 <div class='portfolioList'>
-<% if @current_user != nil %> <%# Delete this to show portfolio for all  %>
+<%# if @current_user != nil %> <%# Delete this to show portfolio for all  %>
   <tbody>
     <% @positions.each do |position| %>
       <tr>
@@ -19,9 +19,9 @@
     <% end %>
   </tbody>
 </table>
-<% else %> <%# and this else block %>
-  <br>Portfolio currently private.
-<% end %> <br>
+<%# else %> <%# and this else block %>
+  <br>Some constituents of the Portfolio are currently private.
+<%# end %><br>
 </div>
 
 <div class='button'>

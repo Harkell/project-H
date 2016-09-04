@@ -13,7 +13,5 @@ class Position < ActiveRecord::Base
 	validates :description,
 		:presence => true
 
-	validates :active,
-		:presence => true
 
 end
